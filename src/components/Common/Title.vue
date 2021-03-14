@@ -1,5 +1,5 @@
 <template>
-  <div class="relative flex justify-center m-auto my-5">
+  <div class="relative flex justify-center m-auto my-2 sm:my-4">
     <div class="text-3xl">
       <slot />
     </div>

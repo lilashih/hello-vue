@@ -3,10 +3,7 @@
     class="restart"
     @click="$emit('restart')"
   >
-    <Fa
-      icon="sync-alt"
-      size="lg"
-    />
+    <Fa icon="sync-alt" />
   </div>
 </template>
 <script>
@@ -17,6 +14,7 @@ export default {
 
 <style scoped>
 .restart{
-  @apply p-2 inline-block rounded bg-green-700 bg-opacity-25 text-green-800 cursor-pointer hover:bg-opacity-50 hover:text-white;
+  @apply p-2 inline-block rounded cursor-pointer hover:text-gray-500 flex justify-end;
+  @apply md:justify-center;
 }
 </style>

@@ -82,7 +82,8 @@ export default {
 
 <style scoped>
 .card {
-  @apply border-black border-2 p-1.5 rounded-lg h-32 bg-white cursor-pointer;
+  @apply border-black border-2 p-1.5 rounded-lg h-28 bg-white cursor-pointer;
+  @apply md:h-32;
   transition: transform 0.4s;
   transform-style: preserve-3d;
 }
@@ -112,9 +113,6 @@ export default {
   );
 }
 .back {
-  @apply bg-red-50;
-}
-.icon {
   @apply bg-red-50;
 }
 </style>

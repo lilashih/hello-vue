@@ -1,7 +1,5 @@
 <template>
-  <div class="w-fit m-auto mb-3">
-    <Restart @restart="restart" />
-  </div>
+  <Restart @restart="restart" />
   <div class="cards">
     <transition-group name="shuffle">
       <Card
