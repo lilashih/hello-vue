@@ -1,11 +1,11 @@
 <template>
-  <div class="relative flex justify-center m-auto mt-6">
+  <div class="relative flex justify-center m-auto my-5">
     <div class="text-3xl">
       <slot />
     </div>
     <div class="absolute right-0 text-right">
       <a
-        href="https://github.com/lilashih"
+        href="https://github.com/lilashih/hello-world"
         target="_blank"
       >
         <Fa

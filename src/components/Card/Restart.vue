@@ -17,6 +17,6 @@ export default {
 
 <style scoped>
 .restart{
-  @apply rounded bg-green-700 bg-opacity-25 text-green-800 p-2 ml-6 cursor-pointer hover:bg-opacity-50 hover:text-white;
+  @apply p-2 inline-block rounded bg-green-700 bg-opacity-25 text-green-800 cursor-pointer hover:bg-opacity-50 hover:text-white;
 }
 </style>

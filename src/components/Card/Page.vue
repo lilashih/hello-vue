@@ -26,6 +26,6 @@ export default {
 
 <style scoped>
 .container {
-  @apply w-full m-auto;
+  @apply w-full m-auto mb-10;
 }
 </style>

@@ -1,23 +1,21 @@
 <template>
-  <div class="game">
-    <div class="cards">
-      <transition-group name="shuffle">
-        <Card
-          v-for="(card, index) in cards"
-          :key="`${card.icon}_${card.v}`"
-          :index="index"
-          :matched="card.matched"
-          :visible="card.visible"
-          :icon="card.icon"
-          :background-color="card.backgroundColor"
-          :color="card.color"
-          @click-card="clickCard"
-        />
-      </transition-group>
-    </div>
-    <div>
-      <Restart @restart="restart" />
-    </div>
+  <div class="w-fit m-auto mb-3">
+    <Restart @restart="restart" />
+  </div>
+  <div class="cards">
+    <transition-group name="shuffle">
+      <Card
+        v-for="(card, index) in cards"
+        :key="`${card.icon}_${card.v}`"
+        :index="index"
+        :matched="card.matched"
+        :visible="card.visible"
+        :icon="card.icon"
+        :background-color="card.backgroundColor"
+        :color="card.color"
+        @click-card="clickCard"
+      />
+    </transition-group>
   </div>
 </template>
 
@@ -36,7 +34,9 @@ export default {
   setup() {
     const cards = reactive([]);
     const actives = reactive([]);
-    const matchedCount = computed(() => cards.filter((card) => card.matched === true).length);
+    const matchedCount = computed(
+      () => cards.filter((card) => card.matched === true).length
+    );
 
     const clickCard = (payload) => {
       if (cards[payload.index].matched === false) {
@@ -54,7 +54,8 @@ export default {
     };
 
     watch(
-      actives, (newVal) => {
+      actives,
+      (newVal) => {
         if (newVal.length === 2) {
           const first = newVal[0];
           const second = newVal[1];
@@ -72,7 +73,7 @@ export default {
           actives.length = 0;
         }
       },
-      { deep: true },
+      { deep: true }
     );
 
     watch(matchedCount, (newVal) => {
@@ -95,12 +96,9 @@ export default {
 </script>
 
 <style scoped>
-.game{
-  @apply p-8 flex m-auto justify-center;
-  margin-left: 5%;
-}
-.cards{
-  @apply grid grid-cols-4 grid-rows-4 gap-6 justify-center max-w-screen-sm w-3/5;
+.cards {
+  @apply m-auto grid grid-cols-4 grid-rows-4 gap-2 p-1;
+  @apply md:gap-6 md:max-w-screen-sm md:w-3/5;
 }
 .shuffle-move {
   transition: transform 1s;
