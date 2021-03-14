@@ -35,7 +35,7 @@ export default {
     const cards = reactive([]);
     const actives = reactive([]);
     const matchedCount = computed(
-      () => cards.filter((card) => card.matched === true).length
+      () => cards.filter((card) => card.matched === true).length,
     );
 
     const clickCard = (payload) => {
@@ -73,7 +73,7 @@ export default {
           actives.length = 0;
         }
       },
-      { deep: true }
+      { deep: true },
     );
 
     watch(matchedCount, (newVal) => {
