@@ -1,15 +1,18 @@
 <template>
   <div>
-    <CardPage />
+    <!-- <CardPage /> -->
+    <TicTacToePage />
   </div>
 </template>
 
 <script>
-import CardPage from "@/components/Card/Page.vue";
+import CardPage from '@/components/Card/Page.vue';
+import TicTacToePage from '@/components/TicTacToe/Page.vue';
 
 export default {
   components: {
     CardPage,
+    TicTacToePage,
   },
 };
 </script>

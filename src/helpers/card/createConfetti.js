@@ -1,8 +1,8 @@
-import confetti from "canvas-confetti";
+import confetti from 'canvas-confetti';
 
 export default function createConfetti() {
   const end = Date.now() + (5 * 1000);
-  const colors = ["#bb0000", "#ffffff"];
+  const colors = ['#bb0000', '#ffffff'];
 
   (function frame() {
     confetti({

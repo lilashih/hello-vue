@@ -8,7 +8,7 @@
 </template>
 <script>
 export default {
-  emits: ["restart"],
+  emits: ['restart'],
 };
 </script>
 

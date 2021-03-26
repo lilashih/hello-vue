@@ -1,8 +1,8 @@
 <template>
   <div class="container">
-    <Title title="Flip Game">
+    <Title title="Tic-Tac-Toe">
       <div class="font-black">
-        Flip Game
+        Tic-Tac-Toe
       </div>
     </Title>
     <Game />
@@ -11,7 +11,7 @@
 
 <script>
 import Title from '@/components/Common/Title.vue';
-import Game from '@/components/Card/Game.vue';
+import Game from '@/components/TicTacToe/Game.vue';
 
 export default {
   components: {
@@ -19,13 +19,7 @@ export default {
     Game,
   },
   mounted() {
-    document.body.classList.add('card-body');
+    document.body.classList.add('tic-tac-toe-body');
   },
 };
 </script>
-
-<style scoped>
-.container {
-  @apply w-full m-auto;
-}
-</style>

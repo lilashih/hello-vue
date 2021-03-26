@@ -6,13 +6,13 @@ module.exports = {
   extends: [
     'plugin:vue/vue3-recommended',
     'airbnb-base',
-    'eslint:recommended'
+    'eslint:recommended',
   ],
   parser: 'vue-eslint-parser',
   parserOptions: {
     ecmaVersion: 12,
     sourceType: 'module',
-    parser: 'babel-eslint'
+    parser: 'babel-eslint',
   },
   settings: {
     'import/resolver': {
@@ -20,29 +20,30 @@ module.exports = {
         map: [
           ['@', './src'],
         ],
-      }
-    }
+      },
+    },
   },
   plugins: [
     'vue',
   ],
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 1 : 0,
-    'quotes': [1, 'double'],
+    quotes: [1, 'single'],
     'key-spacing': [
       1,
       {
-        'beforeColon': false,
-        'afterColon': true
-      }
+        beforeColon: false,
+        afterColon: true,
+      },
     ],
-    'block-scoped-var': 2,
     'dot-notation': 2,
     'max-len': [1, {
-      'code': 200
+      code: 200,
     }],
     'eol-last': [1, 'never'],
     'vue/prop-name-casing': 2,
-    'vue/component-name-in-template-casing': 2
+    'vue/component-name-in-template-casing': 2,
+    'import/prefer-default-export': 'off',
+    'function-call-argument-newline': ['error', 'never'],
   },
 };

@@ -33,7 +33,7 @@
 </template>
 
 <script>
-import { computed } from "vue";
+import { computed } from 'vue';
 
 export default {
   props: {
@@ -55,18 +55,18 @@ export default {
     },
     backgroundColor: {
       type: String,
-      default: "",
+      default: '',
     },
     color: {
       type: String,
-      default: "",
+      default: '',
     },
   },
-  emits: ["click-card"],
+  emits: ['click-card'],
   setup(props, context) {
-    const flippedStyle = computed(() => (props.visible ? "flipped" : ""));
+    const flippedStyle = computed(() => (props.visible ? 'flipped' : ''));
     const clickCard = () => {
-      context.emit("click-card", {
+      context.emit('click-card', {
         icon: props.icon,
         index: props.index,
       });
@@ -101,15 +101,6 @@ export default {
     #f1b673 10px,
     #e7861c 10px,
     #e7861c 20px
-  );
-}
-.front:hover {
-  background: repeating-linear-gradient(
-    45deg,
-    #e7861c,
-    #e7861c 10px,
-    #f1b673 10px,
-    #f1b673 20px
   );
 }
 .back {

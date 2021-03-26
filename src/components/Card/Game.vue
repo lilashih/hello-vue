@@ -18,11 +18,11 @@
 </template>
 
 <script>
-import { reactive, watch, computed } from "vue";
-import Card from "@/components/Card/Card.vue";
-import Restart from "@/components/Card/Restart.vue";
-import creatCards from "@/helpers/card/creatCards";
-import createConfetti from "@/helpers/card/createConfetti";
+import { reactive, watch, computed } from 'vue';
+import Card from '@/components/Card/Card.vue';
+import Restart from '@/components/Card/Restart.vue';
+import creatCards from '@/helpers/card/creatCards';
+import createConfetti from '@/helpers/card/createConfetti';
 
 export default {
   components: {
@@ -52,8 +52,7 @@ export default {
     };
 
     watch(
-      actives,
-      (newVal) => {
+      actives, (newVal) => {
         if (newVal.length === 2) {
           const first = newVal[0];
           const second = newVal[1];
@@ -70,8 +69,7 @@ export default {
           }
           actives.length = 0;
         }
-      },
-      { deep: true },
+      }, { deep: true },
     );
 
     watch(matchedCount, (newVal) => {
