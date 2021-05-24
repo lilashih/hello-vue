@@ -19,13 +19,7 @@ export default {
     Game,
   },
   mounted() {
-    document.body.classList.add('card-body');
+    $('body').attr('class', 'card-body');
   },
 };
 </script>
-
-<style scoped>
-.container {
-  @apply w-full m-auto;
-}
-</style>
