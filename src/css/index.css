@@ -14,7 +14,10 @@ body {
 }
 .container {
     @apply w-full m-auto;
-  }
+}
 .card-body {
     background-color: #eeeeee;
+}
+.tic-tac-toe-body {
+    background-color: #f6f2e7;
 }

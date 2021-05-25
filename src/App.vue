@@ -1,21 +1,19 @@
 <template>
   <div>
-    <!-- <CardPage /> -->
-    <TicTacToePage />
+    <router-link to="/card">
+      card
+    </router-link>
+    <router-link to="/tic-tac-toe">
+      tic-tac-toe
+    </router-link>
   </div>
+
+  <router-view />
 </template>
 
 <script>
-import CardPage from '@/components/Card/Page.vue';
-import TicTacToePage from '@/components/TicTacToe/Page.vue';
-
 export default {
   components: {
-    CardPage,
-    TicTacToePage,
   },
 };
 </script>
-
-<style>
-</style>

@@ -2,7 +2,7 @@
   <div class="container">
     <Title title="Tic-Tac-Toe">
       <div class="font-black">
-        Tic-Tac-Toe
+        Tic Tac Toe
       </div>
     </Title>
     <Game />
@@ -19,7 +19,7 @@ export default {
     Game,
   },
   mounted() {
-    document.body.classList.add('tic-tac-toe-body');
+    $(`body`).attr('class', 'tic-tac-toe-body');
   },
 };
 </script>

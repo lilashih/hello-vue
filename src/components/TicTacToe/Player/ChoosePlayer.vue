@@ -1,8 +1,5 @@
 <template>
-  <div class="text-center mt-6 bg-green-50 p-8">
-    <div class="text-2xl mb-4 semibold">
-      CHOOSE
-    </div>
+  <div class="flex justify-center items-center text-center mt-6">
     <Player
       v-for="(player, index) in players"
       :key="index"
@@ -26,7 +23,9 @@ export default {
 
     return {
       players: store.state.ticTacToe.players,
-      chooseRole: (index) => store.dispatch('ticTacToe/chooseRole', { index }),
+      chooseRole: (index) => {
+        store.dispatch('ticTacToe/chooseRole', { index });
+      },
     };
   },
 };
