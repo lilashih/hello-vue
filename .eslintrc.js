@@ -47,5 +47,6 @@ module.exports = {
     'vue/component-name-in-template-casing': 2,
     'import/prefer-default-export': 'off',
     'function-call-argument-newline': ['error', 'never'],
+    'no-unused-vars': 'warn',
   },
 };
