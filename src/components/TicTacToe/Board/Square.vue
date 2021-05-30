@@ -43,8 +43,8 @@ export default {
       type: String,
       default: 'black',
     },
-    emits: ['click-square'],
   },
+  emits: ['click-square'],
   setup(props, context) {
     const className = ref(`square-${props.index}`);
     const hasIcon = computed(() => props.icon !== '');

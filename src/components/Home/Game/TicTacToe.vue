@@ -37,7 +37,7 @@ export default {
     };
   },
   methods: {
-    clickSquare(payload) {
+    clickSquare() {
       this.$router.push({ name: 'tic-tac-toe' });
     },
   },

@@ -19,7 +19,7 @@ export default {
     Game,
   },
   mounted() {
-    $(`body`).attr('class', 'tic-tac-toe-body');
+    $('body').attr('class', 'tic-tac-toe-body');
   },
 };
 </script>

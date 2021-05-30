@@ -47,7 +47,7 @@ export default {
     };
   },
   methods: {
-    clickCard(payload) {
+    clickCard() {
       this.$router.push({ name: 'card' });
     },
   },
