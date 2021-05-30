@@ -15,7 +15,7 @@
     >
       <Fa
         :icon="icon"
-        size="3x"
+        :size="iconSize"
         flip="horizontal"
       />
       <div
@@ -53,6 +53,10 @@ export default {
       type: String,
       required: true,
     },
+    iconSize: {
+      type: String,
+      default: '3x',
+    },
     backgroundColor: {
       type: String,
       default: '',
@@ -83,7 +87,7 @@ export default {
 <style scoped>
 .card {
   @apply border-black border-2 p-1.5 rounded-lg h-28 bg-white cursor-pointer;
-  @apply md:h-32;
+  @apply md:h-44;
   transition: transform 0.4s;
   transform-style: preserve-3d;
 }

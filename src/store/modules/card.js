@@ -1,4 +1,4 @@
-import _ from 'lodash';
+import { shuffle } from 'lodash';
 
 const state = {
   faces: [
@@ -29,7 +29,7 @@ const state = {
     },
     {
       icon: 'grin-tongue-wink',
-      backgroundColor: '#797171',
+      backgroundColor: '#60739d',
       color: '#ffd700',
     },
     {
@@ -44,7 +44,7 @@ const state = {
     },
   ],
   cards: [],
-  openedCards: [], // 被打開的卡片 最多只會有2個element
+  openedCards: [], // the opened cards (2 elements at most)
 };
 
 const getters = {
@@ -84,7 +84,7 @@ const mutations = {
         matched: false,
       });
     });
-    state.cards = _.shuffle(state.cards);
+    state.cards = shuffle(state.cards);
   },
   initOpenedCards(state) {
     state.openedCards.length = 0;
