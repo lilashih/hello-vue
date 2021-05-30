@@ -11,9 +11,10 @@ module.exports = {
   ],
   parser: 'vue-eslint-parser',
   parserOptions: {
-    ecmaVersion: 12,
     sourceType: 'module',
-    parser: 'babel-eslint',
+    requireConfigFile: false,
+    ecmaVersion: 12,
+    parser: '@babel/eslint-parser',
   },
   settings: {
     'import/resolver': {
