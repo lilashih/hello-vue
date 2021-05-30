@@ -15,6 +15,9 @@ body {
 .container {
     @apply w-full m-auto;
 }
+.home-body {
+    background-color: #191818;
+}
 .card-body {
     background-color: #eeeeee;
 }
