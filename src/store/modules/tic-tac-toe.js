@@ -1,6 +1,9 @@
 import {
   isEmpty, isNumber, isString, shuffle,
 } from 'lodash';
+import {
+  matchedIndex,
+} from '@/helpers/helper';
 
 const state = {
   players: [
@@ -81,7 +84,7 @@ const actions = {
       }
     }
     const max = Math.max(...num);
-    const lines = num.map((element, index) => ((element === max) ? index : undefined)).filter((x) => x !== undefined);
+    const lines = matchedIndex(num, max);
 
     // avoid being the same step every time
     const positions = [];

@@ -1,14 +1,26 @@
 <template>
-  <div class="relative flex justify-center m-auto my-2 sm:my-4">
-    <div class="text-3xl">
-      <slot />
+  <div class="text-center my-2 sm:my-4 text-3xl">
+    <slot name="title" />
+  </div>
+
+  <div class="flex justify-center m-auto px-2 my-2">
+    <div
+      class="text-left w-1/12"
+      @click="$emit('restart')"
+    >
+      <Fa
+        class="head-icon"
+        icon="sync-alt"
+        size="lg"
+      />
     </div>
-    <div class="absolute right-0 text-right">
+    <div class="text-right w-11/12">
       <router-link
         class="mr-1"
         :to="{ name: 'home'}"
       >
         <Fa
+          class="head-icon"
           icon="home"
           size="lg"
         />
@@ -18,6 +30,7 @@
         target="_blank"
       >
         <Fa
+          class="head-icon"
           :icon="['fab', 'github']"
           size="lg"
         />
@@ -34,6 +47,7 @@ export default {
       default: '',
     },
   },
+  emits: ['restart'],
   watch: {
     title: {
       handler() {
@@ -44,3 +58,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.head-icon{
+  @apply cursor-pointer hover:text-gray-500;
+}
+</style>

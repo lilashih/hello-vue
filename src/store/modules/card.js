@@ -43,7 +43,7 @@ const state = {
       color: '#9c6721',
     },
   ],
-  cards: [],
+  cards: [], // ui
   openedCards: [], // the opened cards (2 elements at most)
 };
 
@@ -56,9 +56,44 @@ const actions = {
     commit('initOpenedCards');
     commit('initCards');
   },
-  clickCard({ commit }, payload) {
+  clickCard({ commit, dispatch }, payload) {
     if (state.cards[payload.index].matched === false) {
       commit('clickCard', payload);
+      dispatch('checkOpenCardIsMatched');
+    }
+  },
+  checkOpenCardIsMatched({ commit }) {
+    if (state.openedCards.length === 2) {
+      const first = state.openedCards[0];
+      const second = state.openedCards[1];
+
+      if (first.index === second.index) {
+        commit('updateVisible', {
+          index: first.index,
+          visible: false,
+        });
+      } else if (first.icon === second.icon) {
+        commit('updateMatched', {
+          index: first.index,
+          matched: true,
+        });
+        commit('updateMatched', {
+          index: second.index,
+          matched: true,
+        });
+      } else {
+        setTimeout(() => {
+          commit('updateVisible', {
+            index: first.index,
+            visible: false,
+          });
+          commit('updateVisible', {
+            index: second.index,
+            visible: false,
+          });
+        }, 1000);
+      }
+      commit('initOpenedCards');
     }
   },
 };

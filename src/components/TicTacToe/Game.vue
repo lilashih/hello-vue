@@ -1,5 +1,4 @@
 <template>
-  <Restart @restart="restart" />
   <div
     v-if="hasRole"
     class="text-center"
@@ -30,13 +29,11 @@ import { useStore } from 'vuex';
 import { computed } from 'vue';
 import ChoosePlayer from '@/components/TicTacToe/Player/ChoosePlayer.vue';
 import Board from '@/components/TicTacToe/Board/Board.vue';
-import Restart from '@/components/Common/Restart.vue';
 
 export default {
   components: {
     ChoosePlayer,
     Board,
-    Restart,
   },
   setup() {
     const store = useStore();
@@ -46,19 +43,12 @@ export default {
     const hasWinner = computed(() => store.getters['ticTacToe/hasWinner']);
     const tie = computed(() => store.getters['ticTacToe/tie']);
 
-    const restart = () => {
-      store.dispatch('ticTacToe/restart');
-    };
-
-    restart();
-
     return {
       me,
       hasRole,
       winner,
       hasWinner,
       tie,
-      restart,
     };
   },
 };
