@@ -4,6 +4,15 @@
       <slot />
     </div>
     <div class="absolute right-0 text-right">
+      <router-link
+        class="mr-1"
+        :to="{ name: 'home'}"
+      >
+        <Fa
+          icon="home"
+          size="lg"
+        />
+      </router-link>
       <a
         href="https://github.com/lilashih/hello-world"
         target="_blank"

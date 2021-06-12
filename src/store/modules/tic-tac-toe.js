@@ -34,8 +34,8 @@ const getters = {
     }
     return {};
   },
-  tie: (state) => !isEmpty(state.squares) && !state.squares.includes(''),
   hasWinner: (state, getters) => !isEmpty(getters.winner),
+  tie: (state) => !isEmpty(state.squares) && !state.squares.includes(''),
 };
 
 const actions = {
@@ -111,9 +111,9 @@ const mutations = {
     state.players[0].role = '';
     state.players[1].role = '';
   },
-  initSquare(state) {
+  initSquare(state, { size = 3 } = {}) {
     // set square for ui
-    state.squares = ['', '', '', '', '', '', '', '', ''];
+    state.squares = new Array(size * size).fill('');
     // set the win lines
     state.rules = [
       [0, 1, 2],

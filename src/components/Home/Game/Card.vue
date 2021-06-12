@@ -59,7 +59,20 @@ export default {
   @apply fixed inset-1/4;
   width: 60px;
   height: 100px;
-  transform: rotateY(0deg) rotate(45deg);
-  transition: transform 0.3s;
+  animation: shake 3s;
+  animation-iteration-count: infinite;
+}
+.card-box:hover {
+  animation: 0;
+  animation: flip 0.3s;
+}
+@keyframes shake {
+  0% { transform: rotateY(0deg) rotate(45deg); }
+  50% { transform: rotateY(0deg) rotate(30deg); }
+  100% { transform: rotateY(0deg) rotate(45deg); }
+}
+@keyframes flip {
+  0% { transform: rotateY(45deg); transform-style: preserve-3d; }
+  100% { transform: rotateY(180deg); }
 }
 </style>

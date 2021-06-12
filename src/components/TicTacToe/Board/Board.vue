@@ -18,7 +18,7 @@
 import { computed, watch } from 'vue';
 import { useStore } from 'vuex';
 import Square from '@/components/TicTacToe/Board/Square.vue';
-import createConfetti from '@/helpers/card/createConfetti';
+import createConfetti from '@/helpers/createConfetti';
 
 export default {
   components: {

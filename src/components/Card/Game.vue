@@ -15,7 +15,6 @@ export default {
   },
   setup() {
     const store = useStore();
-
     const restart = () => {
       store.dispatch('card/restart');
     };

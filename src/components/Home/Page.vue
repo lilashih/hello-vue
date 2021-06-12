@@ -15,7 +15,7 @@ export default {
     TicTacToe,
   },
   mounted() {
-    $('body').attr('class', 'home-body');
+    $('body').attr('class', 'body-home');
   },
 };
 </script>

@@ -14,7 +14,6 @@ export default {
 
 <style scoped>
 .restart{
-  @apply p-2 inline-block rounded cursor-pointer hover:text-gray-500 flex justify-end;
-  @apply md:justify-center;
+  @apply p-2 inline-block rounded cursor-pointer hover:text-gray-500 flex justify-end md:justify-center;
 }
 </style>

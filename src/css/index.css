@@ -15,12 +15,15 @@ body {
 .container {
     @apply w-full m-auto;
 }
-.home-body {
+.body-home {
     background-color: #191818;
 }
-.card-body {
+.body-card {
     background-color: #eeeeee;
 }
-.tic-tac-toe-body {
+.body-tic-tac-toe {
+    background-color: #f6f2e7;
+}
+.body-2048 {
     background-color: #f6f2e7;
 }

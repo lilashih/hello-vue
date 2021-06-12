@@ -20,7 +20,7 @@
 import { useStore } from 'vuex';
 import { watch, computed } from 'vue';
 import Card from '@/components/Card/Board/Card.vue';
-import createConfetti from '@/helpers/card/createConfetti';
+import createConfetti from '@/helpers/createConfetti';
 
 export default {
   components: {
@@ -42,14 +42,29 @@ export default {
           const first = newVal[0];
           const second = newVal[1];
           if (first.index === second.index) {
-            store.commit('card/updateVisible', { index: first.index, visible: false });
+            store.commit('card/updateVisible', {
+              index: first.index,
+              visible: false,
+            });
           } else if (first.icon === second.icon) {
-            store.commit('card/updateMatched', { index: first.index, matched: true });
-            store.commit('card/updateMatched', { index: second.index, matched: true });
+            store.commit('card/updateMatched', {
+              index: first.index,
+              matched: true,
+            });
+            store.commit('card/updateMatched', {
+              index: second.index,
+              matched: true,
+            });
           } else {
             setTimeout(() => {
-              store.commit('card/updateVisible', { index: first.index, visible: false });
-              store.commit('card/updateVisible', { index: second.index, visible: false });
+              store.commit('card/updateVisible', {
+                index: first.index,
+                visible: false,
+              });
+              store.commit('card/updateVisible', {
+                index: second.index,
+                visible: false,
+              });
             }, 1000);
           }
           store.commit('card/initOpenedCards');
@@ -74,10 +89,9 @@ export default {
 
 <style scoped>
 .cards {
-  @apply m-auto grid grid-cols-4 grid-rows-4 gap-2 p-1;
+  @apply m-auto grid grid-cols-4 gap-2 p-1;
   @apply md:gap-6 md:max-w-screen-sm md:w-3/5;
-}
-.shuffle-move {
-  transition: transform 1s;
+  grid-template-rows: repeat(4, minmax(25%, max-content));
+  height: 80vh;
 }
 </style>

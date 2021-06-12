@@ -19,7 +19,7 @@ export default {
     Game,
   },
   mounted() {
-    $('body').attr('class', 'card-body');
+    $('body').attr('class', 'body-card');
   },
 };
 </script>

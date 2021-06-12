@@ -6,7 +6,7 @@
       :index="index"
       :value="index"
       :icon="icon"
-      size="50"
+      :size="50"
       icon-size="2x"
       icon-color="white"
       @click-square="clickSquare"
@@ -25,15 +25,8 @@ export default {
   setup() {
     const squares = reactive(['', 'times', '', ['far', 'circle'], '', '', '', '', '']);
 
-    const mouseOver = () => {
-    };
-    const mouseLeave = () => {
-    };
-
     return {
       squares,
-      mouseOver,
-      mouseLeave,
     };
   },
   methods: {
@@ -50,7 +43,13 @@ export default {
   width: 150px;
   left: 60%;
   top: 40%;
-  transform: rotateY(0deg) rotate(-10deg);
-  transition: transform 0.3s;
+
+  animation: shake 3s;
+  animation-iteration-count: infinite;
+}
+@keyframes shake {
+  0% { transform: rotateY(0deg) rotate(-10deg); }
+  50% { transform: rotateY(0deg) rotate(-20deg); }
+  100% { transform: rotateY(0deg) rotate(-10deg); }
 }
 </style>

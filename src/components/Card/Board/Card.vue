@@ -86,8 +86,7 @@ export default {
 
 <style scoped>
 .card {
-  @apply border-black border-2 p-1.5 rounded-lg h-28 bg-white cursor-pointer;
-  @apply md:h-44;
+  @apply border-black border-2 p-1.5 rounded-lg bg-white cursor-pointer;
   transition: transform 0.4s;
   transform-style: preserve-3d;
 }

@@ -3,7 +3,8 @@ import routes from '@/router/pages';
 
 const router = createRouter({
   base: process.env.NODE_ENV === 'production' ? '/hello-world/' : '/',
-  history: createWebHashHistory(),
+  // createWebHashHistory for github page
+  history: process.env.NODE_ENV === 'production' ? createWebHashHistory() : createWebHistory(),
   routes,
 });
 
