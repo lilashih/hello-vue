@@ -29,24 +29,25 @@ module.exports = {
     'vue',
   ],
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 1 : 0,
-    quotes: [1, 'single'],
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    quotes: ['warn', 'single'],
     'key-spacing': [
-      1,
+      'warn',
       {
         beforeColon: false,
         afterColon: true,
       },
     ],
-    'dot-notation': 2,
-    'max-len': [1, {
+    'dot-notation': 'error',
+    'max-len': ['warn', {
       code: 200,
     }],
-    'eol-last': [1, 'never'],
-    'vue/prop-name-casing': 2,
-    'vue/component-name-in-template-casing': 2,
+    'eol-last': ['warn', 'never'],
+    'vue/prop-name-casing': 'error',
+    'vue/component-name-in-template-casing': 'error',
     'import/prefer-default-export': 'off',
     'function-call-argument-newline': ['error', 'never'],
     'no-unused-vars': 'warn',
+    'consistent-return': 'warn',
   },
 };
