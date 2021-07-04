@@ -2,7 +2,7 @@
   "name": "lila-page",
   "version": "1.0.0",
   "scripts": {
-    "dev": "cross-env NODE_ENV=dev vite",
+    "dev": "cross-env NODE_ENV=development vite",
     "build": "cross-env NODE_ENV=production vite build",
     "serve": "vite preview",
     "lint": "eslint --fix src/**/*.{js,vue}"
