@@ -3,9 +3,7 @@
     v-if="hasRole"
     class="text-center"
   >
-    <span
-      class="me"
-    >
+    <span class="me">
       You are:
       <Fa :icon="me.icon" />
     </span>

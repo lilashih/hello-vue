@@ -6,8 +6,8 @@
 </template>
 
 <script>
-import Card from '@/components/Home/Game/Card.vue';
-import TicTacToe from '@/components/Home/Game/TicTacToe.vue';
+import Card from '@/components/Home/Card.vue';
+import TicTacToe from '@/components/Home/TicTacToe.vue';
 
 export default {
   components: {
