@@ -68,7 +68,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .square{
   @apply text-center cursor-pointer flex items-center justify-center;
 }

@@ -1,12 +1,12 @@
 <template>
   <div class="container">
     <Header
-      title="Tic-Tac-Toe"
+      title="2048"
       @restart="restart"
     >
       <template #title>
         <div class="font-black">
-          Tic Tac Toe
+          2048
         </div>
       </template>
     </Header>
@@ -17,7 +17,7 @@
 <script>
 import { useStore } from 'vuex';
 import Header from '@/components/Common/Header.vue';
-import Game from '@/components/TicTacToe/Game.vue';
+import Game from '@/components/2048/Game.vue';
 
 export default {
   components: {
@@ -27,7 +27,7 @@ export default {
   setup() {
     const store = useStore();
     const restart = () => {
-      store.dispatch('ticTacToe/restart');
+      store.dispatch('game2048/restart');
     };
 
     restart();
@@ -37,13 +37,13 @@ export default {
     };
   },
   mounted() {
-    $('body').attr('class', 'body-tic-tac-toe');
+    $('body').attr('class', 'body-2048');
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .container {
-  width: 250px;
+  width: 500px;
 }
 </style>

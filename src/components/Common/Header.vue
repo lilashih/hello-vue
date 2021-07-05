@@ -59,7 +59,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .head-icon{
   @apply cursor-pointer hover:text-gray-500;
 }

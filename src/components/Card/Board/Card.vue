@@ -84,7 +84,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .card {
   @apply border-black border-2 p-1.5 rounded-lg bg-white cursor-pointer;
   transition: transform 0.4s;

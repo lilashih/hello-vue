@@ -1,15 +1,5 @@
 <template>
   <div
-    v-if="hasRole"
-    class="text-center"
-  >
-    <span class="me">
-      You are:
-      <Fa :icon="me.icon" />
-    </span>
-  </div>
-
-  <div
     v-if="hasWinner || tie"
     class="over"
   >
@@ -18,7 +8,15 @@
     <span v-else>You lose !</span>
   </div>
 
-  <Board v-if="hasRole" />
+  <div v-if="hasRole">
+    <div class="text-center">
+      <span class="me">
+        You are:
+        <Fa :icon="me.icon" />
+      </span>
+    </div>
+    <Board />
+  </div>
   <ChoosePlayer v-else />
 </template>
 
@@ -52,7 +50,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .me {
   @apply text-base py-1 px-5 rounded-sm font-mono text-white bg-tic-tac-toe;
 }

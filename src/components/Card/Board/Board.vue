@@ -50,7 +50,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .cards {
   @apply m-auto grid grid-cols-4 gap-2 p-1;
   @apply md:gap-6 md:max-w-screen-sm;

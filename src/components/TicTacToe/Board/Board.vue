@@ -52,7 +52,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .board{
   @apply mx-auto mt-6 mb-4 grid grid-cols-3 grid-rows-3;
 }

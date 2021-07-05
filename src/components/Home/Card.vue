@@ -54,7 +54,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .card-box {
   @apply fixed inset-1/4;
   width: 60px;

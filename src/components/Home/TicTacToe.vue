@@ -37,7 +37,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
 .tic-tac-toe-box{
   @apply fixed grid grid-cols-3 grid-rows-3;
   width: 150px;
