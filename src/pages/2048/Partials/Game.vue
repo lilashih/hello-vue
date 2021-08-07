@@ -7,8 +7,9 @@
 
 <script>
 import { useStore } from 'vuex';
-import { computed } from 'vue';
-import Board from '@/components/2048/Board/Board.vue';
+import { watch, computed } from 'vue';
+import Board from '@/pages/2048/Partials/Board/Board.vue';
+import createConfetti from '@/helpers/createConfetti';
 
 export default {
   components: {
@@ -17,6 +18,13 @@ export default {
   setup() {
     const store = useStore();
     const score = computed(() => store.getters['game2048/score']);
+    const win = computed(() => store.getters['game2048/win']);
+
+    watch(win, (newVal) => {
+      if (newVal) {
+        createConfetti();
+      }
+    });
 
     return {
       score,

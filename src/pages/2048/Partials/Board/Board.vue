@@ -17,8 +17,8 @@
 <script>
 import { useStore } from 'vuex';
 import { computed } from 'vue';
-import Square from '@/components/2048/Board/Square.vue';
-import KeyboardEvent from '@/components/Common/KeyboardEvent.vue';
+import Square from '@/pages/2048/Partials/Board/Square.vue';
+import KeyboardEvent from '@/components/KeyboardEvent.vue';
 
 export default {
   components: {
@@ -71,8 +71,21 @@ export default {
 
 <style lang="scss" scoped>
 .board {
-  @apply m-4 grid grid-cols-4 gap-3 p-3 rounded-md;
+  @apply m-auto grid gap-3 p-3 rounded-md;
+  grid-template-columns: repeat(4, minmax(10px, 200px));
+  width: fit-content;
   background-color: #baa99b;
-  height: 70vh;
+  height: 75vh;
+}
+@media (max-width: 768px) {
+  .board {
+    @apply mx-1.5;
+    height: 40vh;
+  }
+}
+@media (max-width: 640px) {
+  .board {
+    height: 60vh;
+  }
 }
 </style>

@@ -1,6 +1,6 @@
 <template>
   <Item
-    class="card-box"
+    class="item-box"
     :index="item.index"
     :matched="item.matched"
     :visible="item.visible"
@@ -10,13 +10,13 @@
     :color="item.color"
     @mouseover="mouseOver"
     @mouseleave="mouseLeave"
-    @click-card="clickCard"
+    @click-card="clickItem"
   />
 </template>
 
 <script>
 import { reactive } from 'vue';
-import Card from '@/components/Card/Board/Card.vue';
+import Card from '@/pages/Card/Partials/Board/Card.vue';
 
 export default {
   components: {
@@ -47,7 +47,7 @@ export default {
     };
   },
   methods: {
-    clickCard() {
+    clickItem() {
       this.$router.push({ name: 'card' });
     },
   },
@@ -55,14 +55,14 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.card-box {
+.item-box {
   @apply fixed inset-1/4;
   width: 60px;
   height: 100px;
   animation: shake 3s;
   animation-iteration-count: infinite;
 }
-.card-box:hover {
+.item-box:hover {
   animation: 0;
   animation: flip 0.3s;
 }

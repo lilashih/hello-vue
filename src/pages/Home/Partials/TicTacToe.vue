@@ -1,7 +1,7 @@
 <template>
-  <div class="tic-tac-toe-box">
-    <Square
-      v-for="(icon, index) in squares"
+  <div class="item-box">
+    <Item
+      v-for="(icon, index) in items"
       :key="index"
       :index="index"
       :value="index"
@@ -9,28 +9,28 @@
       :size="50"
       icon-size="2x"
       icon-color="white"
-      @click-square="clickSquare"
+      @click-square="clickItem"
     />
   </div>
 </template>
 
 <script>
 import { reactive } from 'vue';
-import Square from '@/components/TicTacToe/Board/Square.vue';
+import Square from '@/pages/TicTacToe/Partials/Board/Square.vue';
 
 export default {
   components: {
-    Square,
+    Item: Square,
   },
   setup() {
-    const squares = reactive(['', 'times', '', ['far', 'circle'], '', '', '', '', '']);
+    const items = reactive(['', 'times', '', ['far', 'circle'], '', '', '', '', '']);
 
     return {
-      squares,
+      items,
     };
   },
   methods: {
-    clickSquare() {
+    clickItem() {
       this.$router.push({ name: 'tic-tac-toe' });
     },
   },
@@ -38,7 +38,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.tic-tac-toe-box{
+.item-box{
   @apply fixed grid grid-cols-3 grid-rows-3;
   width: 150px;
   left: 60%;

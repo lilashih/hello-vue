@@ -23,8 +23,8 @@
 <script>
 import { useStore } from 'vuex';
 import { computed } from 'vue';
-import ChoosePlayer from '@/components/TicTacToe/Player/ChoosePlayer.vue';
-import Board from '@/components/TicTacToe/Board/Board.vue';
+import ChoosePlayer from '@/pages/TicTacToe/Partials/Player/ChoosePlayer.vue';
+import Board from '@/pages/TicTacToe/Partials/Board/Board.vue';
 
 export default {
   components: {

@@ -19,7 +19,7 @@
 <script>
 import { useStore } from 'vuex';
 import { watch, computed } from 'vue';
-import Card from '@/components/Card/Board/Card.vue';
+import Card from '@/pages/Card/Partials/Board/Card.vue';
 import createConfetti from '@/helpers/createConfetti';
 
 export default {

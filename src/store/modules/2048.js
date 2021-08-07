@@ -66,7 +66,7 @@ const getters = {
     const k = (Math.log(value) / Math.log(state.baseNumber)) - 1;
     return state.colors[k];
   },
-  win: (state, getters) => getters.score >= state.win,
+  win: (state, getters) => getters.score === state.win,
   lose: (state, getters) => (state.squares.find((element) => element === 0) === undefined) && !getters.win,
 };
 
@@ -118,8 +118,6 @@ const actions = {
         });
       }
     });
-
-    console.log(state.squareFeatures);
   },
   moveLeft({ dispatch }) {
     const rows = [...chunks(state.squares, state.squareSize)];
@@ -170,6 +168,7 @@ const mutations = {
     state.baseNumber = baseNumber;
     state.squareSize = size;
     state.win = win;
+    state.squareFeatures = [];
     state.squares = new Array(state.squareSize * state.squareSize).fill(0);
     state.squares.forEach(() => {
       state.squareFeatures.push({

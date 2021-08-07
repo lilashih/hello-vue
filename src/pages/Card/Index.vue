@@ -1,12 +1,12 @@
 <template>
   <div class="container">
     <Header
-      title="2048"
+      title="Flip Game"
       @restart="restart"
     >
       <template #title>
         <div class="font-black">
-          2048
+          Flip Game
         </div>
       </template>
     </Header>
@@ -16,8 +16,8 @@
 
 <script>
 import { useStore } from 'vuex';
-import Header from '@/components/Common/Header.vue';
-import Game from '@/components/2048/Game.vue';
+import Header from '@/components/Header.vue';
+import Game from '@/pages/Card/Partials/Game.vue';
 
 export default {
   components: {
@@ -27,7 +27,7 @@ export default {
   setup() {
     const store = useStore();
     const restart = () => {
-      store.dispatch('game2048/restart');
+      store.dispatch('card/restart');
     };
 
     restart();
@@ -37,13 +37,13 @@ export default {
     };
   },
   mounted() {
-    $('body').attr('class', 'body-2048');
+    $('body').attr('class', 'body-card');
   },
 };
 </script>
 
 <style lang="scss" scoped>
 .container {
-  width: 500px;
+  @apply md:w-3/5 lg:w-2/5;
 }
 </style>

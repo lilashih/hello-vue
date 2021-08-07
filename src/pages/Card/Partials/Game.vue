@@ -3,7 +3,7 @@
 </template>
 
 <script>
-import Board from '@/components/Card/Board/Board.vue';
+import Board from '@/pages/Card/Partials/Board/Board.vue';
 
 export default {
   components: {

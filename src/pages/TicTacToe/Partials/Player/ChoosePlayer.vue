@@ -12,7 +12,7 @@
 
 <script>
 import { useStore } from 'vuex';
-import Player from '@/components/TicTacToe/Player/Player.vue';
+import Player from '@/pages/TicTacToe/Partials/Player/Player.vue';
 
 export default {
   components: {

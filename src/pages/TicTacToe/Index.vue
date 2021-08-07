@@ -16,8 +16,8 @@
 
 <script>
 import { useStore } from 'vuex';
-import Header from '@/components/Common/Header.vue';
-import Game from '@/components/TicTacToe/Game.vue';
+import Header from '@/components/Header.vue';
+import Game from '@/pages/TicTacToe/Partials/Game.vue';
 
 export default {
   components: {
@@ -44,6 +44,7 @@ export default {
 
 <style lang="scss" scoped>
 .container {
-  width: 250px;
+  @apply sm:w-full md:w-2/5;
+  max-width: 300px;
 }
 </style>

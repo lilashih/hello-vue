@@ -7,8 +7,17 @@ My practice of Vue.js.
 - Styles – [Tailwind CSS](https://tailwindcss.com/).
 - Deployment with [GitHub Actions](https://docs.github.com/en/actions).
 
+## Development
+Run
+```shell
+npm i
+npm run dev
+```
+
 ## Games
 - Flip Game  
 A card-matching game, you can watch this [video](https://www.youtube.com/watch?v=WQa9-4K3me4) to learn the details.
 
 - Tic Tac Toe
+
+- 2048

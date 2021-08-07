@@ -1,7 +1,7 @@
-import Home from '@/views/Home.vue';
-import Card from '@/views/Card.vue';
-import TicTacToe from '@/views/TicTacToe.vue';
-import Game2048 from '@/views/Game2048.vue';
+import Home from '@/pages/Home/Index.vue';
+import Card from '@/pages/Card/Index.vue';
+import TicTacToe from '@/pages/TicTacToe/Index.vue';
+import Game2048 from '@/pages/2048/Index.vue';
 
 const routes = [
   { path: '/', component: Home, name: 'home' },

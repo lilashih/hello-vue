@@ -24,7 +24,7 @@ export default {
 
 <style lang="scss" scoped>
 .player {
-  @apply inline-block m-3 p-6 cursor-pointer font-black w-24 rounded-sm font-mono text-white border-8 bg-tic-tac-toe border-tic-tac-toe;
+  @apply inline-block m-3 p-8 cursor-pointer font-black w-32 rounded-sm font-mono text-white border-8 bg-tic-tac-toe border-tic-tac-toe;
   box-shadow: 0 0 5px rgba(68,68,68,0.6);
 }
 .player:hover {
