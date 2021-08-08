@@ -1,4 +1,6 @@
 <template>
+  <Title :title="title" />
+
   <div class="text-center my-2 sm:my-4 text-3xl">
     <slot name="title" />
   </div>
@@ -40,7 +42,12 @@
 </template>
 
 <script>
+import Title from '@/components/Title.vue';
+
 export default {
+  components: {
+    Title,
+  },
   props: {
     title: {
       type: String,
@@ -48,14 +55,6 @@ export default {
     },
   },
   emits: ['restart'],
-  watch: {
-    title: {
-      handler() {
-        document.title = this.title;
-      },
-      immediate: true,
-    },
-  },
 };
 </script>
 

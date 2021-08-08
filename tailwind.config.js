@@ -3,6 +3,9 @@ const colors = require('tailwindcss/colors');
 colors['tic-tac-toe'] = {
   DEFAULT: '#777',
 };
+colors.youtube = {
+  DEFAULT: '#dbf2ea',
+};
 
 module.exports = {
   purge: [
@@ -20,8 +23,6 @@ module.exports = {
     }),
     extend: {},
   },
-  variants: {
-    extend: {},
-  },
+  variants: {},
   plugins: [],
 };

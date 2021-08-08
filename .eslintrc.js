@@ -50,5 +50,10 @@ module.exports = {
     'function-call-argument-newline': ['error', 'never'],
     'no-unused-vars': 'warn',
     'consistent-return': 'warn',
+    'import/no-extraneous-dependencies': ['error', {
+      devDependencies: [
+        'tailwind.config.js',
+      ],
+    }],
   },
 };
