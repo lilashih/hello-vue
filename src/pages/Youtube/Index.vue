@@ -16,6 +16,7 @@
       :loop="1"
       :width="1200"
       :height="600"
+      @ended="restart"
     />
     <div class="reload">
       <textarea

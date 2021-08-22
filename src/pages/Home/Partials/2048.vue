@@ -39,7 +39,7 @@ export default {
       classes.value = defaultClasses.concat(['animate__rubberBand']);
     };
     const mouseLeave = () => {
-      classes.value = defaultClasses.concat(['animate__swing', 'animate__infinite', 'infinite']);
+      classes.value = defaultClasses.concat(['animate__tada', 'animate__infinite', 'infinite']);
     };
     mouseLeave();
 

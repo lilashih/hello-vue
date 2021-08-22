@@ -1,21 +1,23 @@
 <template>
-  <Item
-    class="item-box"
-    :index="item.index"
-    :matched="item.matched"
-    :visible="item.visible"
-    :icon="item.icon"
-    :icon-size="item.iconSize"
-    :background-color="item.backgroundColor"
-    :color="item.color"
-    @mouseover="mouseOver"
-    @mouseleave="mouseLeave"
-    @click-card="clickItem"
-  />
+  <div :class="classes">
+    <Item
+      class="item"
+      :index="item.index"
+      :matched="item.matched"
+      :visible="item.visible"
+      :icon="item.icon"
+      :icon-size="item.iconSize"
+      :background-color="item.backgroundColor"
+      :color="item.color"
+      @mouseover="mouseOver"
+      @mouseleave="mouseLeave"
+      @click-card="clickItem"
+    />
+  </div>
 </template>
 
 <script>
-import { reactive } from 'vue';
+import { reactive, ref } from 'vue';
 import Card from '@/pages/Card/Partials/Board/Card.vue';
 
 export default {
@@ -23,6 +25,8 @@ export default {
     Item: Card,
   },
   setup() {
+    const defaultClasses = ['item-box', 'animate__animated'];
+    const classes = ref([]);
     const item = reactive({
       index: 1,
       icon: 'anchor',
@@ -32,16 +36,19 @@ export default {
       matched: false,
       visible: false,
     });
-
     const mouseOver = () => {
       item.visible = true;
+      classes.value = defaultClasses;
     };
     const mouseLeave = () => {
       item.visible = false;
+      classes.value = defaultClasses.concat(['animate__swing', 'animate__slower', 'animate__infinite', 'infinite']);
     };
+    mouseLeave();
 
     return {
       item,
+      classes,
       mouseOver,
       mouseLeave,
     };
@@ -57,22 +64,9 @@ export default {
 <style lang="scss" scoped>
 .item-box {
   @apply fixed inset-1/4;
+}
+.item {
   width: 60px;
   height: 100px;
-  animation: shake 1.5s;
-  animation-iteration-count: infinite;
-}
-.item-box:hover {
-  animation: 0;
-  animation: flip 0.3s;
-}
-@keyframes shake {
-  0% { transform: rotateY(0deg) rotate(50deg); }
-  50% { transform: rotateY(0deg) rotate(20deg); }
-  100% { transform: rotateY(0deg) rotate(50deg); }
-}
-@keyframes flip {
-  0% { transform: rotateY(45deg); transform-style: preserve-3d; }
-  100% { transform: rotateY(180deg); }
 }
 </style>
