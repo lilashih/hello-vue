@@ -1,3 +1,4 @@
+import 'animate.css';
 import '@/css/index.scss';
 import FontAwesomeIcon from '@/plugins/fontAwesome';
 import Vue3TouchEvents from 'vue3-touch-events';

@@ -1,5 +1,9 @@
 <template>
-  <div class="item-box">
+  <div
+    :class="classes"
+    @mouseover="mouseOver"
+    @mouseleave="mouseLeave"
+  >
     <Item
       v-for="(icon, index) in items"
       :key="index"
@@ -15,7 +19,7 @@
 </template>
 
 <script>
-import { reactive } from 'vue';
+import { reactive, ref } from 'vue';
 import Square from '@/pages/TicTacToe/Partials/Board/Square.vue';
 
 export default {
@@ -23,10 +27,22 @@ export default {
     Item: Square,
   },
   setup() {
+    const defaultClasses = ['item-box', 'animate__animated'];
+    const classes = ref([]);
     const items = reactive(['', 'times', '', ['far', 'circle'], '', '', '', '', '']);
+    const mouseOver = () => {
+      classes.value = defaultClasses.concat(['animate__rotateIn']);
+    };
+    const mouseLeave = () => {
+      classes.value = defaultClasses.concat(['animate__jello', 'animate__slower', 'animate__infinite', 'infinite']);
+    };
+    mouseLeave();
 
     return {
       items,
+      classes,
+      mouseOver,
+      mouseLeave,
     };
   },
   methods: {
@@ -43,13 +59,5 @@ export default {
   width: 150px;
   left: 60%;
   top: 40%;
-
-  animation: shake 3s;
-  animation-iteration-count: infinite;
-}
-@keyframes shake {
-  0% { transform: rotateY(0deg) rotate(-10deg); }
-  50% { transform: rotateY(0deg) rotate(-20deg); }
-  100% { transform: rotateY(0deg) rotate(-10deg); }
 }
 </style>

@@ -13,6 +13,9 @@ body {
     @apply m-0 p-0 w-full;
     overscroll-behavior-y: contain;
 }
+iframe {
+    @apply w-full;
+}
 .container {
     @apply w-full m-auto;
 }

@@ -4,6 +4,7 @@
     <Card />
     <TicTacToe />
     <Game2048 />
+    <Youtube />
   </div>
 </template>
 
@@ -12,6 +13,7 @@ import Title from '@/components/Title.vue';
 import Card from '@/pages/Home/Partials/Card.vue';
 import TicTacToe from '@//pages/Home/Partials/TicTacToe.vue';
 import Game2048 from '@//pages/Home/Partials/2048.vue';
+import Youtube from '@//pages/Home/Partials/Youtube.vue';
 
 export default {
   components: {
@@ -19,6 +21,7 @@ export default {
     Card,
     TicTacToe,
     Game2048,
+    Youtube,
   },
   mounted() {
     $('body').attr('class', 'body-home');

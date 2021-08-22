@@ -14,15 +14,15 @@
       ref="youtube"
       :videoid="videoId"
       :loop="1"
-      :width="480"
-      :height="320"
+      :width="1200"
+      :height="600"
     />
     <div class="reload">
       <textarea
         v-model="url"
         class="url"
         rows="3"
-        placeholder="youtube's url..."
+        placeholder="the youtube's url..."
       />
       <button
         class="play"
@@ -85,14 +85,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-iframe {
-  @apply w-full;
-}
 .container {
-  @apply md:w-3/5 lg:w-2/5;
-}
-iframe {
-  @apply m-auto w-full;
+  @apply md:w-3/5 lg:w-3/5;
 }
 .reload{
   @apply mt-4;

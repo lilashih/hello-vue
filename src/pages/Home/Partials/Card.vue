@@ -59,7 +59,7 @@ export default {
   @apply fixed inset-1/4;
   width: 60px;
   height: 100px;
-  animation: shake 3s;
+  animation: shake 1.5s;
   animation-iteration-count: infinite;
 }
 .item-box:hover {
@@ -67,9 +67,9 @@ export default {
   animation: flip 0.3s;
 }
 @keyframes shake {
-  0% { transform: rotateY(0deg) rotate(45deg); }
-  50% { transform: rotateY(0deg) rotate(30deg); }
-  100% { transform: rotateY(0deg) rotate(45deg); }
+  0% { transform: rotateY(0deg) rotate(50deg); }
+  50% { transform: rotateY(0deg) rotate(20deg); }
+  100% { transform: rotateY(0deg) rotate(50deg); }
 }
 @keyframes flip {
   0% { transform: rotateY(45deg); transform-style: preserve-3d; }
