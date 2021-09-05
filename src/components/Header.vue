@@ -28,7 +28,7 @@
         />
       </router-link>
       <a
-        href="https://github.com/lilashih/hello-world"
+        href="https://github.com/lilashih/hello-vue"
         target="_blank"
       >
         <Fa

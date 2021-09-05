@@ -47,7 +47,7 @@ export default {
     Header,
   },
   setup() {
-    const defaultVideoId = 'nROvY9uiYYk';
+    const defaultVideoId = import.meta.env.VITE_DEFULT_YOUTUBE_ID;
     const url = ref('');
     const videoId = ref(defaultVideoId);
     const youtube = ref(null);
