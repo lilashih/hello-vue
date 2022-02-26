@@ -1,54 +1,56 @@
 <template>
-  <div :class="classes">
-    <Item
-      class="item"
-      :index="item.index"
-      :matched="item.matched"
-      :visible="item.visible"
-      :icon="item.icon"
-      :icon-size="item.iconSize"
-      :background-color="item.backgroundColor"
-      :color="item.color"
-      @mouseover="mouseOver"
-      @mouseleave="mouseLeave"
-      @click-card="clickItem"
-    />
-  </div>
+  <Animate
+    class="item-box"
+    :leave-animate="['animate__swing', 'animate__slower', 'animate__infinite', 'infinite']"
+  >
+    <template #content>
+      <Item
+        class="item"
+        :index="item.index"
+        :matched="item.matched"
+        :visible="item.visible"
+        :icon="item.icon"
+        :icon-size="item.iconSize"
+        :background-color="item.backgroundColor"
+        :color="item.color"
+        @mouseover="mouseOver"
+        @mouseleave="mouseLeave"
+        @click-card="clickItem"
+      />
+    </template>
+  </Animate>
 </template>
 
 <script>
-import { reactive, ref } from 'vue';
+import { reactive } from 'vue';
 import Card from '@/pages/Card/Partials/Board/Card.vue';
+import Animate from '@/components/Animate.vue';
 
 export default {
   components: {
+    Animate,
     Item: Card,
   },
   setup() {
-    const defaultClasses = ['item-box', 'animate__animated'];
-    const classes = ref([]);
     const item = reactive({
       index: 1,
       icon: 'anchor',
       backgroundColor: '#fecaca',
       color: '#069bcc',
-      iconSize: '2x',
+      iconSize: '1x',
       matched: false,
       visible: false,
     });
     const mouseOver = () => {
       item.visible = true;
-      classes.value = defaultClasses;
     };
     const mouseLeave = () => {
       item.visible = false;
-      classes.value = defaultClasses.concat(['animate__swing', 'animate__slower', 'animate__infinite', 'infinite']);
     };
     mouseLeave();
 
     return {
       item,
-      classes,
       mouseOver,
       mouseLeave,
     };
@@ -62,11 +64,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.item-box {
-  @apply fixed inset-1/4;
-}
 .item {
-  width: 60px;
-  height: 100px;
+  width: 40px;
+  height: 65px;
+  @apply border p-1;
 }
 </style>

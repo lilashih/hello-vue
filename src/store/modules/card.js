@@ -14,8 +14,8 @@ const state = {
     },
     {
       icon: 'cat',
-      backgroundColor: '#ef4444',
-      color: '#f3f4f6',
+      backgroundColor: '#ebcfe1',
+      color: '#b34801',
     },
     {
       icon: 'anchor',
@@ -34,8 +34,8 @@ const state = {
     },
     {
       icon: 'fish',
-      backgroundColor: '#528cd1',
-      color: '#fbdcbb',
+      backgroundColor: '#fbdcbb',
+      color: '#528cd1',
     },
     {
       icon: 'guitar',

@@ -52,12 +52,13 @@ export default {
 
 <style lang="scss" scoped>
 .me {
-  @apply text-base py-1 px-5 rounded-sm font-mono text-white bg-tic-tac-toe;
+  @apply text-base py-1 px-5 rounded-sm font-mono text-white;
+  background-color: #236a7e;
 }
 .over {
   @apply absolute text-center pt-32 inset-x-4;
 }
 .over span{
-  @apply text-3xl px-9 py-2 font-mono;
+  @apply text-3xl px-9 py-2 font-mono font-semibold;
 }
 </style>

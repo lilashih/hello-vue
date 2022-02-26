@@ -1,33 +1,35 @@
 <template>
-  <div
-    :class="classes"
-    @mouseover="mouseOver"
-    @mouseleave="mouseLeave"
+  <Animate
+    class="item-box"
+    :over-animate="['animate__rubberBand']"
+    :leave-animate="['animate__tada', 'animate__infinite', 'infinite']"
   >
-    <Item
-      :key="item.index"
-      class="item"
-      :index="item.index"
-      :before-key="item.beforeKey"
-      :before-value="item.beforeValue"
-      :after-value="item.afterValue"
-      :by-computer="item.byComputer"
-      @click="clickSquare"
-    />
-  </div>
+    <template #content>
+      <Item
+        :key="item.index"
+        class="item"
+        :index="item.index"
+        :before-key="item.beforeKey"
+        :before-value="item.beforeValue"
+        :after-value="item.afterValue"
+        :by-computer="item.byComputer"
+        @click="clickItem"
+      />
+    </template>
+  </Animate>
 </template>
 
 <script>
-import { reactive, ref } from 'vue';
+import { reactive } from 'vue';
 import Square from '@/pages/2048/Partials/Board/Square.vue';
+import Animate from '@/components/Animate.vue';
 
 export default {
   components: {
+    Animate,
     Item: Square,
   },
   setup() {
-    const defaultClasses = ['item-box', 'animate__animated'];
-    const classes = ref([]);
     const item = reactive({
       index: 1,
       beforeKey: 0,
@@ -35,23 +37,13 @@ export default {
       afterValue: 2048,
       byComputer: true,
     });
-    const mouseOver = () => {
-      classes.value = defaultClasses.concat(['animate__rubberBand']);
-    };
-    const mouseLeave = () => {
-      classes.value = defaultClasses.concat(['animate__tada', 'animate__infinite', 'infinite']);
-    };
-    mouseLeave();
 
     return {
-      classes,
       item,
-      mouseOver,
-      mouseLeave,
     };
   },
   methods: {
-    clickSquare() {
+    clickItem() {
       this.$router.push({ name: '2048' });
     },
   },
@@ -59,12 +51,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.item-box {
-  @apply fixed top-3/4 left-1/3;
-}
 .item {
-  @apply text-2xl;
-  width: 70px;
-  height: 70px;
+  @apply text-xl;
+  width: 50px;
+  height: 50px;
+}
+.square {
+  @apply text-lg;
 }
 </style>

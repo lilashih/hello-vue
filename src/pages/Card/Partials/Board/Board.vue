@@ -53,7 +53,7 @@ export default {
 <style lang="scss" scoped>
 .cards {
   @apply m-auto grid grid-cols-4 gap-2 p-1;
-  @apply md:gap-6 md:max-w-screen-sm;
+  @apply md:gap-4 md:max-w-screen-sm;
   grid-template-rows: repeat(4, minmax(25%, max-content));
   height: 75vh;
 }

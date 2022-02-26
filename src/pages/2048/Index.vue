@@ -5,9 +5,7 @@
       @restart="restart"
     >
       <template #title>
-        <div class="font-black">
-          2048
-        </div>
+        <span class="title"><span>2048</span></span>
       </template>
     </Header>
     <Game />
@@ -43,8 +41,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$color-2048-header: #3b3730;
+
 .container {
   @apply sm:w-full md:w-2/4 lg:w-2/5;
   overflow: hidden;
+}
+.title{
+  @apply text-white;
+  border-color: $color-2048-header;
+}
+.title span {
+  background-color: $color-2048-header;
 }
 </style>

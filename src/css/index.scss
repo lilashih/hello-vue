@@ -19,18 +19,30 @@ iframe {
 .container {
     @apply w-full m-auto;
 }
-.body-home {
-    background-color: #191818;
+.body-home{
+    @apply bg-gray-900;
 }
 .body-card {
-    background-color: #eeeeee;
+    background-image: linear-gradient(135deg, #d0d0d0 25%, transparent 25%), linear-gradient(225deg, #d0d0d0 25%, transparent 25%), linear-gradient(45deg, #d0d0d0 25%, transparent 25%), linear-gradient(3deg, #d0d0d0 90%, #f4f4f3 25%);
+    background-size: 100px 100px;
 }
 .body-tic-tac-toe {
-    background-color: #f6f2e7;
+    background-image: linear-gradient(135deg, #b6cedd66 25%, transparent 25%), linear-gradient(225deg, #b6cedd 25%, transparent 25%), linear-gradient(45deg, #b6cedd66 25%, transparent 25%), linear-gradient(315deg, #b6cedd 25%, #efefef 25%);
+    background-position: 50px 0, 50px 0, 0 0, 0 0;
+    background-size: 100px 100px;
+    background-repeat: repeat;
 }
 .body-2048 {
-    background-color: #f6f2e7;
+    height: 100vh;
+    background: linear-gradient(160deg, #f6f2e7 50%, #3b3730 50.1%);
 }
 .body-youtube {
-    @apply bg-youtube;
+    @apply bg-black text-white;
+}
+.title{
+    @apply border-double my-3 text-white font-bold;
+    border-width: 10px;
+}
+.title span{
+    @apply px-5;
 }

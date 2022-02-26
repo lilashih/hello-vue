@@ -1,7 +1,7 @@
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons';
 import {
-  faHome, faCandyCane, faBomb, faCat, faAnchor, faCrown, faGrinTongueWink, faFish, faGuitar, faSyncAlt, faCheckCircle, faTimes,
+  faHome, faCandyCane, faBomb, faCat, faAnchor, faCrown, faGrinTongueWink, faFish, faGuitar, faSyncAlt, faCheckCircle, faTimes, faPlay,
 } from '@fortawesome/free-solid-svg-icons';
 import {
   faCircle,
@@ -9,6 +9,6 @@ import {
 // import { fas } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 
-library.add(faGithub, faYoutube, faHome, faCandyCane, faBomb, faCat, faAnchor, faCrown, faGrinTongueWink, faFish, faGuitar, faSyncAlt, faCheckCircle, faTimes, faCircle);
+library.add(faGithub, faYoutube, faHome, faCandyCane, faBomb, faCat, faAnchor, faCrown, faGrinTongueWink, faFish, faGuitar, faSyncAlt, faCheckCircle, faTimes, faPlay, faCircle);
 
 export default FontAwesomeIcon;

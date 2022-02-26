@@ -5,9 +5,7 @@
       @restart="restart"
     >
       <template #title>
-        <div class="font-black">
-          Repeating the Youtube Video
-        </div>
+        <span class="title"><span>Repeat YouTube</span></span>
       </template>
     </Header>
     <YoutubeVue3
@@ -19,18 +17,21 @@
       @ended="restart"
     />
     <div class="reload">
-      <textarea
+      <input
         v-model="url"
+        type="text"
         class="url"
-        rows="3"
-        placeholder="the youtube's url..."
-      />
-      <button
+        placeholder="YouTube URL..."
+      >
+      <div
         class="play"
         @click="playVideo()"
       >
-        Play
-      </button>
+        <span><Fa
+          icon="play"
+          size="lg"
+        /></span>
+      </div>
     </div>
   </div>
 </template>
@@ -93,13 +94,15 @@ export default {
   @apply mt-4;
 }
 .url {
-  @apply w-full p-2 block;
+  @apply w-full p-2 block rounded-md bg-gray-900;
 }
 .play{
-  @apply my-3 py-2 font-bold w-full text-xl bg-green-900 border-4 border-green-900 rounded-md text-youtube;
+  @apply mt-4 font-bold w-full text-xl rounded-md text-center cursor-pointer;
 }
-.play:hover{
-  @apply text-green-900;
-  background-color: transparent;
+.play:hover span {
+  @apply hidden;
+}
+.play:hover:before {
+  content: "P L A Y"
 }
 </style>

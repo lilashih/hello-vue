@@ -1,6 +1,4 @@
-import {
-  chunks, matchedIndex,
-} from '@/helpers/helper';
+import { chunks, matchedIndex } from '@/helpers/helper';
 import { shuffle, cloneDeep, isEmpty } from 'lodash';
 
 const state = {

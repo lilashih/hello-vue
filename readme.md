@@ -1,4 +1,4 @@
-# Hello World
+# Hello Vue
 My practice of Vue.js.
 - Built with [Vue.js](https://v3.vuejs.org/).
 - State Management – [Vuex](https://next.vuex.vuejs.org/).
@@ -14,12 +14,11 @@ npm i
 npm run dev
 ```
 
-## Games
-- Flip Game  
-A card-matching game, you can watch this [video](https://www.youtube.com/watch?v=WQa9-4K3me4) to learn the details.
+## Reference
+- [Card Matching Game](https://www.youtube.com/watch?v=WQa9-4K3me4)
+- Backgrounds
+  - [MagicPattern](https://codepen.io/mohaiman/pen/MQqMyo)
+  - [Pure Css Animated Background](https://www.magicpattern.design/tools/css-backgrounds)
 
-- Tic Tac Toe
 
-- 2048
 
-- Youtube Player

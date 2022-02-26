@@ -9,13 +9,14 @@
       v-if="hasIcon"
       :icon="icon"
       :size="iconSize"
-      :style="{color: iconColor}"
     />
   </div>
 </template>
 
 <script>
-import { computed, ref, reactive } from 'vue';
+import {
+  computed, ref, reactive,
+} from 'vue';
 
 export default {
   props: {
@@ -39,9 +40,9 @@ export default {
       type: String,
       default: '3x',
     },
-    iconColor: {
-      type: String,
-      default: 'black',
+    borderWidth: {
+      type: Number,
+      default: 4,
     },
   },
   emits: ['click-square'],
@@ -51,6 +52,7 @@ export default {
     const styleObject = reactive({
       width: `${props.size}px`,
       height: `${props.size}px`,
+      '--border-width': `${props.borderWidth}px`,
     });
     const clickSquare = () => {
       context.emit('click-square', {
@@ -70,15 +72,19 @@ export default {
 
 <style lang="scss" scoped>
 .square{
-  @apply text-center cursor-pointer flex items-center justify-center;
+  @apply text-center cursor-pointer flex items-center justify-center text-gray-800;
 }
 .square-0, .square-1, .square-2 {
-  @apply border-b-4 border-gray-500;
+  @apply border-gray-400;
+  border-bottom-width: var(--border-width);
 }
 .square-6, .square-7, .square-8 {
-  @apply border-t-4 border-gray-500;
+  @apply border-gray-400;
+  border-top-width: var(--border-width);
 }
 .square-1, .square-4, .square-7 {
-  @apply border-l-4 border-r-4 border-gray-500;
+  @apply border-gray-400;
+  border-left-width: var(--border-width);
+  border-right-width: var(--border-width);
 }
 </style>

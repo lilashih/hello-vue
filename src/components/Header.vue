@@ -1,11 +1,11 @@
 <template>
   <Title :title="title" />
 
-  <div class="text-center my-2 sm:my-4 text-3xl">
+  <div class="text-center mt-8 mb-5 text-3xl">
     <slot name="title" />
   </div>
 
-  <div class="flex justify-center m-auto px-2 my-2">
+  <div class="head-icon-section">
     <div
       class="text-left w-1/12"
       @click="$emit('restart')"
@@ -59,6 +59,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+.head-icon-section{
+  @apply flex justify-center m-auto px-2 mt-2 mb-1.5;
+}
 .head-icon{
   @apply cursor-pointer hover:text-gray-500;
 }

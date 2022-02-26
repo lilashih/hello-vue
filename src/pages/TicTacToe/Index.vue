@@ -5,9 +5,7 @@
       @restart="restart"
     >
       <template #title>
-        <div class="font-black">
-          Tic Tac Toe
-        </div>
+        <span class="title"><span>TIC-TAC-TOE</span></span>
       </template>
     </Header>
     <Game />
@@ -43,8 +41,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$color-card-header: #cc6b6b;
+
 .container {
   @apply sm:w-full md:w-2/5;
   max-width: 300px;
+}
+.title{
+  @apply text-white;
+  border-color: $color-card-header;
+}
+.title span {
+  background-color: $color-card-header;
 }
 </style>

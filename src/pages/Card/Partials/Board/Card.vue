@@ -24,7 +24,7 @@
       >
         <Fa
           icon="check-circle"
-          size="lg"
+          size="2x"
           flip="horizontal"
         />
       </div>
@@ -86,7 +86,7 @@ export default {
 
 <style lang="scss" scoped>
 .card {
-  @apply border-black border-2 p-1.5 rounded-lg bg-white cursor-pointer;
+  @apply border-gray-900 border-2 p-1.5 rounded-lg bg-white cursor-pointer;
   transition: transform 0.4s;
   transform-style: preserve-3d;
 }
