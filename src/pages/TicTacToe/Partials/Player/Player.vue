@@ -1,5 +1,5 @@
 <template>
-  <Animate
+  <Animation
     class="player"
     :over-animate="['animate__tada']"
   >
@@ -9,15 +9,15 @@
         size="2x"
       />
     </template>
-  </Animate>
+  </Animation>
 </template>
 
 <script>
-import Animate from '@/components/Animate.vue';
+import Animation from '@/components/Animation.vue';
 
 export default {
   components: {
-    Animate,
+    Animation,
   },
   props: {
     value: {

@@ -1,5 +1,5 @@
 <template>
-  <Title :title="title" />
+  <WebTitle :title="title" />
 
   <div class="text-center mt-8 mb-5 text-3xl">
     <slot name="title" />
@@ -42,11 +42,11 @@
 </template>
 
 <script>
-import Title from '@/components/Title.vue';
+import WebTitle from '@/components/WebTitle.vue';
 
 export default {
   components: {
-    Title,
+    WebTitle,
   },
   props: {
     title: {

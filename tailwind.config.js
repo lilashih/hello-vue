@@ -5,11 +5,10 @@ const colors = require('tailwindcss/colors');
 // };
 
 module.exports = {
-  purge: [
+  content: [
     './index.html',
     './src/**/*',
   ],
-  darkMode: false, // or 'media' or 'class'
   theme: {
     colors,
     backgroundColor: (theme) => ({
@@ -20,6 +19,5 @@ module.exports = {
     }),
     extend: {},
   },
-  variants: {},
   plugins: [],
 };

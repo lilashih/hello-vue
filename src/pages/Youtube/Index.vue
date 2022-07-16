@@ -1,13 +1,13 @@
 <template>
   <div class="container">
-    <Header
+    <Layout
       title="Youtube"
       @restart="restart"
     >
       <template #title>
         <span class="title"><span>Repeat YouTube</span></span>
       </template>
-    </Header>
+    </Layout>
     <YoutubeVue3
       ref="youtube"
       :videoid="videoId"
@@ -40,12 +40,12 @@
 import { isEmpty } from 'lodash';
 import { ref } from 'vue';
 import { YoutubeVue3 } from 'youtube-vue3';
-import Header from '@/components/Header.vue';
+import Layout from '@/components/Layout.vue';
 
 export default {
   components: {
     YoutubeVue3,
-    Header,
+    Layout,
   },
   setup() {
     const sessionKey = 'videoId';
@@ -64,10 +64,10 @@ export default {
     };
     const setVideoId = (id) => {
       videoId.value = id;
-      sessionStorage.setItem(sessionKey, id);
+      window.localStorage.setItem(sessionKey, id);
     };
     const setDefaultVideoId = () => {
-      videoId.value = sessionStorage.getItem(sessionKey) || import.meta.env.VITE_DEFULT_YOUTUBE_ID;
+      videoId.value = window.localStorage.getItem(sessionKey) || import.meta.env.VITE_DEFAULT_YOUTUBE_ID;
     };
     const playVideo = () => {
       if (url.value.startsWith('https://www.youtube.com/')) {

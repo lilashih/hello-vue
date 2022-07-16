@@ -1,25 +1,25 @@
 <template>
   <div class="container">
-    <Header
+    <Layout
       title="Tic-Tac-Toe"
       @restart="restart"
     >
       <template #title>
         <span class="title"><span>TIC-TAC-TOE</span></span>
       </template>
-    </Header>
+    </Layout>
     <Game />
   </div>
 </template>
 
 <script>
 import { useStore } from 'vuex';
-import Header from '@/components/Header.vue';
+import Layout from '@/components/Layout.vue';
 import Game from '@/pages/TicTacToe/Partials/Game.vue';
 
 export default {
   components: {
-    Header,
+    Layout,
     Game,
   },
   setup() {
@@ -41,7 +41,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color-card-header: #cc6b6b;
+$default-color: #cc6b6b;
 
 .container {
   @apply sm:w-full md:w-2/5;
@@ -49,9 +49,9 @@ $color-card-header: #cc6b6b;
 }
 .title{
   @apply text-white;
-  border-color: $color-card-header;
+  border-color: $default-color;
 }
 .title span {
-  background-color: $color-card-header;
+  background-color: $default-color;
 }
 </style>

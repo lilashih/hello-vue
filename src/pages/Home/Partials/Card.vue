@@ -1,5 +1,5 @@
 <template>
-  <Animate
+  <Animation
     class="item-box"
     :leave-animate="['animate__swing', 'animate__slower', 'animate__infinite', 'infinite']"
   >
@@ -18,17 +18,17 @@
         @click-card="clickItem"
       />
     </template>
-  </Animate>
+  </Animation>
 </template>
 
 <script>
 import { reactive } from 'vue';
 import Card from '@/pages/Card/Partials/Board/Card.vue';
-import Animate from '@/components/Animate.vue';
+import Animation from '@/components/Animation.vue';
 
 export default {
   components: {
-    Animate,
+    Animation,
     Item: Card,
   },
   setup() {

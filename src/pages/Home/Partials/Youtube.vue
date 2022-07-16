@@ -1,5 +1,5 @@
 <template>
-  <Animate
+  <Animation
     class="item-box"
     :over-animate="['animate__heartBeat']"
     :leave-animate="['animate__swing', 'animate__infinite', 'infinite']"
@@ -11,15 +11,15 @@
         @click="clickItem"
       />
     </template>
-  </Animate>
+  </Animation>
 </template>
 
 <script>
-import Animate from '@/components/Animate.vue';
+import Animation from '@/components/Animation.vue';
 
 export default {
   components: {
-    Animate,
+    Animation,
   },
   methods: {
     clickItem() {

@@ -1,25 +1,25 @@
 <template>
   <div class="container">
-    <Header
+    <Layout
       title="Flip Game"
       @restart="restart"
     >
       <template #title>
         <span class="title"><span>FLIP GAME</span></span>
       </template>
-    </Header>
+    </Layout>
     <Game />
   </div>
 </template>
 
 <script>
 import { useStore } from 'vuex';
-import Header from '@/components/Header.vue';
+import Layout from '@/components/Layout.vue';
 import Game from '@/pages/Card/Partials/Game.vue';
 
 export default {
   components: {
-    Header,
+    Layout,
     Game,
   },
   setup() {
@@ -41,16 +41,16 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-$color-card-header: #095a63;
+$default-color: #095a63;
 
 .container {
   @apply md:w-3/5 lg:w-2/6;
 }
 .title{
   @apply text-white;
-  border-color: $color-card-header;
+  border-color: $default-color;
 }
 .title span {
-  background-color: $color-card-header;
+  background-color: $default-color;
 }
 </style>

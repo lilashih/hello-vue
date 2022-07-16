@@ -1,5 +1,5 @@
 <template>
-  <Title title="Home" />
+  <WebTitle title="Home" />
 
   <ul class="background">
     <li
@@ -17,16 +17,16 @@
 </template>
 
 <script>
-import Title from '@/components/Title.vue';
+import WebTitle from '@/components/WebTitle.vue';
 import Card from '@/pages/Home/Partials/Card.vue';
 import { reactive } from 'vue';
-import TicTacToe from '@//pages/Home/Partials/TicTacToe.vue';
-import Game2048 from '@//pages/Home/Partials/2048.vue';
-import Youtube from '@//pages/Home/Partials/Youtube.vue';
+import TicTacToe from '@/pages/Home/Partials/TicTacToe.vue';
+import Game2048 from '@/pages/Home/Partials/2048.vue';
+import Youtube from '@/pages/Home/Partials/Youtube.vue';
 
 export default {
   components: {
-    Title,
+    WebTitle,
     Card,
     TicTacToe,
     Game2048,

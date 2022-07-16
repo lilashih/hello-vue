@@ -1,5 +1,5 @@
 <template>
-  <Animate
+  <Animation
     class="item-box"
     :over-animate="['animate__rotateIn']"
     :leave-animate="['animate__jello', 'animate__slower', 'animate__infinite', 'infinite']"
@@ -14,23 +14,23 @@
           :icon="icon"
           :size="20"
           :icon-size="'1x'"
-          :icon-color="white"
+          :icon-color="'white'"
           :border-width="2"
           @click-square="clickItem"
         />
       </div>
     </template>
-  </Animate>
+  </Animation>
 </template>
 
 <script>
 import { reactive } from 'vue';
 import Square from '@/pages/TicTacToe/Partials/Board/Square.vue';
-import Animate from '@/components/Animate.vue';
+import Animation from '@/components/Animation.vue';
 
 export default {
   components: {
-    Animate,
+    Animation,
     Item: Square,
   },
   setup() {

@@ -10,7 +10,7 @@ jobs:
     strategy:
       matrix:
         operating-system: ['ubuntu-latest']
-        node: ['14']
+        node: ['16']
     steps:
     - uses: actions/checkout@v2
 

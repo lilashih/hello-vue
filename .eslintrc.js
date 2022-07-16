@@ -5,15 +5,15 @@ module.exports = {
     jquery: true,
   },
   extends: [
+    'eslint:recommended',
     'plugin:vue/vue3-recommended',
     'airbnb-base',
-    'eslint:recommended',
   ],
   parser: 'vue-eslint-parser',
   parserOptions: {
     sourceType: 'module',
     requireConfigFile: false,
-    ecmaVersion: 12,
+    ecmaVersion: 2020,
     parser: '@babel/eslint-parser',
   },
   settings: {
@@ -56,5 +56,6 @@ module.exports = {
         'vite.config.js',
       ],
     }],
+    'vue/multi-word-component-names': 'off',
   },
 };

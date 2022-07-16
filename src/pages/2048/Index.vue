@@ -1,25 +1,25 @@
 <template>
   <div class="container">
-    <Header
+    <Layout
       title="2048"
       @restart="restart"
     >
       <template #title>
         <span class="title"><span>2048</span></span>
       </template>
-    </Header>
+    </Layout>
     <Game />
   </div>
 </template>
 
 <script>
 import { useStore } from 'vuex';
-import Header from '@/components/Header.vue';
+import Layout from '@/components/Layout.vue';
 import Game from '@/pages/2048/Partials/Game.vue';
 
 export default {
   components: {
-    Header,
+    Layout,
     Game,
   },
   setup() {

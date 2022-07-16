@@ -1,5 +1,5 @@
 <template>
-  <Animate
+  <Animation
     class="item-box"
     :over-animate="['animate__rubberBand']"
     :leave-animate="['animate__tada', 'animate__infinite', 'infinite']"
@@ -16,17 +16,17 @@
         @click="clickItem"
       />
     </template>
-  </Animate>
+  </Animation>
 </template>
 
 <script>
 import { reactive } from 'vue';
 import Square from '@/pages/2048/Partials/Board/Square.vue';
-import Animate from '@/components/Animate.vue';
+import Animation from '@/components/Animation.vue';
 
 export default {
   components: {
-    Animate,
+    Animation,
     Item: Square,
   },
   setup() {
