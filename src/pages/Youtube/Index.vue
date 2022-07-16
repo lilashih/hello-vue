@@ -48,19 +48,10 @@ export default {
     Header,
   },
   setup() {
-    const defaultVideoId = import.meta.env.VITE_DEFULT_YOUTUBE_ID;
+    const sessionKey = 'videoId';
     const url = ref('');
-    const videoId = ref(defaultVideoId);
+    const videoId = ref('');
     const youtube = ref(null);
-    const playVideo = () => {
-      if (url.value.startsWith('https://www.youtube.com/')) {
-        const urlParams = new URL(url.value);
-        const id = urlParams.searchParams.get('v');
-        if (!isEmpty(id)) {
-          videoId.value = id;
-        }
-      }
-    };
     const stop = () => {
       youtube.value.player.stopVideo();
     };
@@ -71,6 +62,24 @@ export default {
       stop();
       start();
     };
+    const setVideoId = (id) => {
+      videoId.value = id;
+      sessionStorage.setItem(sessionKey, id);
+    };
+    const setDefaultVideoId = () => {
+      videoId.value = sessionStorage.getItem(sessionKey) || import.meta.env.VITE_DEFULT_YOUTUBE_ID;
+    };
+    const playVideo = () => {
+      if (url.value.startsWith('https://www.youtube.com/')) {
+        const urlParams = new URL(url.value);
+        const id = urlParams.searchParams.get('v');
+        if (!isEmpty(id)) {
+          setVideoId(id);
+        }
+      }
+    };
+
+    setDefaultVideoId();
 
     return {
       url,
